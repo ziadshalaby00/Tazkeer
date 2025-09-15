@@ -1,16 +1,21 @@
 const CACHE_NAME = 'tazkeer-v1';
+
+const BASE_PATH = self.location.pathname.replace(/\/[^/]*$/, '/');
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/styles.css',
-  '/main.js',
-  '/app.js',
-  '/using-fontawesome/css/all.min.css',
-  '/using-fontawesome/webfonts/fa-solid-900.woff2',
-  '/using-fontawesome/webfonts/fa-regular-400.woff2',
-  '/using-fontawesome/webfonts/fa-brands-400.woff2',
-  '/favicon_io/favicon.ico'
+  BASE_PATH,
+  BASE_PATH + 'index.html',
+  BASE_PATH + 'style.css',
+  BASE_PATH + 'main.js',
+  BASE_PATH + 'using-fontawesome/css/all.min.css',
+  BASE_PATH + 'using-fontawesome/webfonts/fa-brands-400.woff2',
+  BASE_PATH + 'using-fontawesome/webfonts/fa-regular-400.woff2',
+  BASE_PATH + 'using-fontawesome/webfonts/fa-solid-900.woff2',
+  BASE_PATH + 'using-fontawesome/webfonts/fa-v4compatibility.woff2',
+  BASE_PATH + 'favicon_io/favicon.ico',
+  BASE_PATH + 'android-chrome-192x192.png',
+  BASE_PATH + 'android-chrome-512x512.png'
 ];
+
 
 // تثبيت Service Worker
 self.addEventListener('install', event => {
