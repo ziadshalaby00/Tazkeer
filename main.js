@@ -321,12 +321,15 @@ window.addEventListener('load', function() {
     
     // تسجيل Service Worker إذا كان متاحًا
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('./sw.js')
+        navigator.serviceWorker.register('sw.js')
             .then(registration => {
                 console.log('Service Worker registered with scope:', registration.scope);
             })
             .catch(error => {
-                console.log('Service Worker registration failed:', error);
+                console.error('❌ Service Worker registration failed:');
+                console.error('Message:', error.message);
+                console.error('Name:', error.name);
+                console.error('Stack:', error.stack);
             });
     }
 

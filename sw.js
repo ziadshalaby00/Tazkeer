@@ -1,6 +1,6 @@
 const CACHE_NAME = 'tazkeer-v1';
 
-const BASE_PATH = self.location.pathname.replace(/\/[^/]*$/, '/');
+const BASE_PATH = '/';
 const urlsToCache = [
   BASE_PATH,
   BASE_PATH + 'index.html',
@@ -19,13 +19,23 @@ const urlsToCache = [
 
 // تثبيت Service Worker
 self.addEventListener('install', event => {
+  console.log('🔧 Installing Service Worker...');
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then(cache => {
-        return cache.addAll(urlsToCache);
+      .then(async cache => {
+        console.log('Opening cache and adding files...');
+        for (const url of urlsToCache) {
+          try {
+            console.log('Caching:', url);
+            await cache.add(url);
+          } catch (err) {
+            console.error('❌ Failed to cache:', url, err);
+          }
+        }
       })
   );
 });
+
 
 // تفعيل Service Worker
 self.addEventListener('activate', event => {
