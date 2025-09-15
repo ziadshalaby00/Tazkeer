@@ -326,10 +326,7 @@ window.addEventListener('load', function() {
                 console.log('Service Worker registered with scope:', registration.scope);
             })
             .catch(error => {
-                console.error('❌ Service Worker registration failed:');
-                console.error('Message:', error.message);
-                console.error('Name:', error.name);
-                console.error('Stack:', error.stack);
+                console.log('Service Worker registration failed:', error);
             });
     }
 
