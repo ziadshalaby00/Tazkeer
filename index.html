@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تذكير - مسبحة إلكترونية</title>
+    <link rel="stylesheet" href="./style.css"> 
+    <link rel="icon" type="image/x-icon" href="./favicon_io/favicon.ico">
+    <!-- إضافة وسم manifest للتطبيق التقدمي -->
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <!-- مؤشر حالة الاتصال -->
+    <div class="connection-status" id="connection-status"></div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="verse">الَّذِينَ آمَنُوا وَتَطْمَئِنُّ قُلُوبُهُم بِذِكْرِ اللَّهِ ۗ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ</div>
+            <h1 class="title">تذكير</h1>
+        </div>
+        
+        <div class="counter-section">
+            <div class="counter-display" id="counter">0</div>
+            
+            <button class="main-btn" id="increment-btn">
+                <i class="fas fa-plus"></i>
+            </button>
+            
+            <div class="secondary-btns">
+                <button class="secondary-btn" id="decrement-btn">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <button class="secondary-btn reset-btn" id="reset-btn">
+                    <i class="fas fa-redo"></i>
+                </button>
+            </div>
+            
+            <div class="custom-input">
+                <input type="number" id="set-counter-input" placeholder="أدخل الرقم الذي تريد البدء منه">
+                <button id="set-counter-btn">تعيين الرقم</button>
+            </div>
+        </div>
+        
+        <div class="history-section">
+            <h3 class="history-title">
+                سجل التصفير
+                <span class="history-settings">
+                    <label for="history-size">حجم السجل:</label>
+                    <input type="number" id="history-size" min="5" max="100" value="10">
+                </span>
+            </h3>
+            <ul class="history-list" id="history-list">
+                <!-- سيتم ملء هذا القسم بالسجل تلقائياً -->
+            </ul>
+        </div>
+    </div>
+    
+    <!-- نافذة إدخال الاسم -->
+    <div class="modal" id="name-modal">
+        <div class="modal-content">
+            <h3 class="modal-header">أدخل اسمًا لهذا التسجيل</h3>
+            <input type="text" class="modal-input" id="history-name-input" placeholder="اسم التسجيل (اختياري)">
+            <div class="modal-buttons">
+                <button class="modal-btn confirm" id="confirm-save">حفظ</button>
+                <button class="modal-btn cancel" id="cancel-save">إلغاء</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- نافذة تعديل الاسم -->
+    <div class="modal" id="edit-modal">
+        <div class="modal-content">
+            <h3 class="modal-header">تعديل اسم التسجيل</h3>
+            <input type="text" class="modal-input" id="edit-name-input" placeholder="اسم التسجيل">
+            <div class="modal-buttons">
+                <button class="modal-btn confirm" id="confirm-edit">حفظ</button>
+                <button class="modal-btn cancel" id="cancel-edit">إلغاء</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <h3 class="footer-title">مميزات تطبيق تذكير</h3>
+        
+        <div class="features-list">
+            <div class="feature-item">
+                <span class="feature-icon"><i class="fas fa-mobile-alt"></i></span>
+                <span class="feature-text">يعمل بدون إنترنت</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon"><i class="fas fa-history"></i></span>
+                <span class="feature-text">سجل تسبيح متكامل</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon"><i class="fas fa-pen"></i></span>
+                <span class="feature-text">تسمية وتسجيل التسبيح</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon"><i class="fas fa-edit"></i></span>
+                <span class="feature-text">تعديل الأسماء والحذف</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon"><i class="fas fa-save"></i></span>
+                <span class="feature-text">حفظ كل التغييرات</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon"><i class="fas fa-palette"></i></span>
+                <span class="feature-text">واجهة جميلة</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon"><i class="fas fa-download"></i></span>
+                <span class="feature-text">تثبيت على الجهاز</span>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>تذكير - مسبحة إلكترونية لذكر الله © 2026</p>
+        </div>
+    </div>
+
+<script src="./main.js"></script>
+</body>
+</html>
