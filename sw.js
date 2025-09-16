@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tazkeer-v1';
+const CACHE_NAME = 'tazkeer-v2';
 
 const BASE_PATH = '/';
 const urlsToCache = [
@@ -12,8 +12,8 @@ const urlsToCache = [
   BASE_PATH + 'using-fontawesome/webfonts/fa-solid-900.woff2',
   BASE_PATH + 'using-fontawesome/webfonts/fa-v4compatibility.woff2',
   BASE_PATH + 'favicon_io/favicon.ico',
-  BASE_PATH + 'android-chrome-192x192.png',
-  BASE_PATH + 'android-chrome-512x512.png'
+  BASE_PATH + 'favicon_io/android-chrome-192x192.png',
+  BASE_PATH + 'favicon_io/android-chrome-512x512.png'
 ];
 
 
